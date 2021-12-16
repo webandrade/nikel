@@ -45,10 +45,16 @@ header {
     margin: 0 25%;
 } 
 
-.button-login:hover {
+.button-login:hover, .button-default:hover {
     background: #4c79d3;
     color: #ffffff;
 }
+
+.button-default {
+    border-radius: 10px;
+    background-color: #4e0070;    
+    color: #ffffff;
+} 
 
 .link-default {    
     color: #4e0070;
@@ -60,4 +66,8 @@ header {
     color: #ffffff;
 }
 
-
+.info {
+    background-color: #ffffff;
+    border-radius: 20px 20px 0px 0px;
+    padding: 20px 0px 0px 0px;
+}
