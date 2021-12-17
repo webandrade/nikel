@@ -62,7 +62,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
-                                <span class="fs-4">Entradas <i class="bi bi-arrow-down-circle fs-2 align-middle"></i></span>
+                                <span class="fs-4">Entradas <i
+                                        class="bi bi-arrow-down-circle fs-2 align-middle"></i></span>
                             </div>
                             <div class="col-6">
                                 <Span class="fs-4">Saídas <i class="bi bi-arrow-up-circle fs-2 align-middle"></i></Span>
@@ -95,6 +96,52 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <button class="btn button-float" data-bs-toggle="modal" data-bs-target="#transaction-modal"><i
+                    class="bi bi-plus"></i></button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="transaction-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Adicionar lançamentos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="transaction-form">
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="value-imput" class="form-label">Valor</label>
+                                <input type="number" class="form-control" id="value-imput"
+                                    aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="description-imput" class="form-label">Descrição</label>
+                                <input type="text" class="form-control" id="description-imput">
+
+                                <div class="mb-3">
+                                    <label for="date-imput" class="form-label">Data</label>
+                                    <input type="date" class="form-control" id="date-imput">
+                                </div>
+                                <div class="mb3">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="type-imput" id="inlineRadio1" value="1" checked>
+                                        <label class="form-check-label" for="inlineRadio1">Entrada</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="type-imput" id="inlineRadio2" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">Saída</label>
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary button-cancel"
+                                    data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary button-default">Adicionar</button>
+                            </div>
+                    </form>
                 </div>
             </div>
         </div>
