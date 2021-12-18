@@ -3,7 +3,7 @@
 [Codaí](https://codai.growdev.com.br/)
 
 
-"No CODAí, você terá uma introdução ao desenvolvimento web, uma das grandes demandas do mercado. Este curso introdutório tem como objetivo mostrar um pouco de como é o desenvolvimento de software, voltado para a internet. O curso serve, também, como uma pré-seleção para o Programa Starter da Growdev, uma formação completa, que você conhecerá no último módulo, e tenho certeza que fará toda a diferença na sua vida.
+"No CODAí, você terá uma introdução ao desenvolvimento web, uma das grandes demandas do mercado. Este curso introdutório tem como objetivo mostrar um pouco de como é o desenvolvimento de software, voltado para a internet. O curso serve, também, como uma pré-seleção para o Programa Starter da Growdev, uma formação completa, que você conhecerá no último módulo, e tenho certeza que fará toda a diferença na sua vida. 
 
 O CODAí está organizado em 1 módulo de Introdução, 5 módulos mão na massa (ou melhor, mão no código) e 1 módulo de Encerramento. Sendo assim, cada módulo estará organizado da seguinte forma:
 
