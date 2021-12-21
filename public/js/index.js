@@ -17,8 +17,9 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
 
     if (account) {
         if(account.password !== password) {
+            alert(password + " account.password - " + account.password);
             alert("Opss! Verifique o usuário ou a senha.");
-        return
+            return;
         }
 
         saveSession(email, checkSession);
