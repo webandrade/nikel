@@ -1,6 +1,9 @@
 const myModal = new bootstrap.Modal("#register-modal");
+const session = localStorage.getItem("session");
+let logged = sessionStorage.getItem("logged");
 
-//LOGAR NO SISTEMA
+checkLogged();
+
 document.getElementById("login-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -13,41 +16,52 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
     if (!account) {
         alert("Opss! Verifique o usuário ou a senha.");
         return;       
-    }
+    }    
 
     if (account) {
         if(account.password !== password) {
-            alert(password + " account.password - " + account.password);
             alert("Opss! Verifique o usuário ou a senha.");
             return;
         }
-
+        
         saveSession(email, checkSession);
 
         window.location.href = "home.html"
-    }
+    }    
 });
 
-//Criar Conta
+function checkLogged() {
+    if(session) {
+        sessionStorage.setItem("logged", session);
+        logged = session;
+    }
+
+    if(logged) {
+        saveSession(logged, session);
+
+        window.location.href = "home.html";
+    }
+}
+
 document.getElementById("creat-form").addEventListener("submit", function(e) {
     e.preventDefault();
     
     const email = document.getElementById("email-create-imput").value;
-    const pasword = document.getElementById("password-create-imput").value;
+    const password = document.getElementById("password-create-imput").value;
 
     if(email.length <5 ) {
         alert("Preencha o campo com um e-mail válido!")
         return;
     }
 
-    if(pasword.length <4 ) {
+    if(password.length <4 ) {
         alert("Preencha a senha com no mínimo de 4 dígitos!")
         return;
     }
 
     saveAccount({
-        login:email,
-        pasword: pasword,
+        login: email,
+        password: password,
         transactions: []
     })
 
