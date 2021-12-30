@@ -1,6 +1,8 @@
 const myModal = new bootstrap.Modal("#transaction-modal");
 const session = localStorage.getItem("session");
 let logged = sessionStorage.getItem("logged");
+let cashIn = [];
+let cashOut = [];
 let data = {
     trasactions: []
 };
@@ -45,6 +47,8 @@ function checkedLogged() {
     if(dataUser) {
         data = JSON.parse(dataUser);
     } 
+
+    getCashIn()
 }
 
 function logout(){
@@ -52,6 +56,13 @@ function logout(){
         localStorage.removeItem("session");
 
         window.location.href = "index.html";
+}
+
+function getCashIn(){
+    const transaction = data.transaction;
+    const cashIn = transaction.filter((item) => item.type == "1");
+
+    console.log(data);
 }
 
 function saveData(data) {
