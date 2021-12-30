@@ -3,11 +3,32 @@ const session = localStorage.getItem("session");
 let logged = sessionStorage.getItem("logged");
 let data = {
     trasactions: []
-}
+};
 
 checkedLogged();
 
 document.getElementById("button-logout").addEventListener("click", logout);
+
+// Adicionar lancamento
+document.getElementById("transaction-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const value = parseFloat(document.getElementById("value-imput").value);
+    const description = document.getElementById("description-imput").value;
+    const date = document.getElementById("date-imput").value;
+    const type = document.querySelector('input[name="type-imput"]:checked').value;
+    
+    data.transactions.unshift({
+        value: value, type: type, description: description, date: date
+    });
+
+    saveData(data);
+    e.target.reset();
+    myModal.hide();
+    
+    alert("Lançamento adicionado com sucesso!")
+});
+
 
 function checkedLogged() {
     if (session) {
@@ -31,4 +52,8 @@ function logout(){
         localStorage.removeItem("session");
 
         window.location.href = "index.html";
+}
+
+function saveData(data) {
+    localStorage.setItem(data.login, JSON.stringify(data));
 }
