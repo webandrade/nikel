@@ -4,7 +4,7 @@ let logged = sessionStorage.getItem("logged");
 let cashIn = [];
 let cashOut = [];
 let data = {
-    trasactions: []
+    transactions: []
 };
 
 checkedLogged();
@@ -48,7 +48,7 @@ function checkedLogged() {
         data = JSON.parse(dataUser);
     } 
 
-    getCashIn()
+    getCashIn();
 }
 
 function logout(){
@@ -59,10 +59,24 @@ function logout(){
 }
 
 function getCashIn(){
-    const transaction = data.transaction;
-    const cashIn = transaction.filter((item) => item.type == "1");
+    const transactions = data.transactions;
+    const cashIn = transactions.filter((item) => item.type == "1");
 
-    console.log(data);
+    if(cashIn.length){
+        let cashInHtml = '';
+        let limit = 0;
+
+        if(cashIn.length > 5){
+            limit = 5;
+        }else{
+            limit = cashIn.length;
+        }
+
+        for (let index = 0; index < limit; index++) {
+            console.log(index);
+            console.log(cashIn[index]);            
+        }
+    }
 }
 
 function saveData(data) {
