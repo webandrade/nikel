@@ -71,16 +71,8 @@
                                             <th scope="col">Descrição</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr scope="row">
-                                            <th scope="row">16/12/2021</th>
-                                            <td scope="row">50.00</td>
-                                            <td scope="row">Saída</td>
-                                            <td scope="row">Gasolina</td>
-                                        </tr>
-                                        <tr>
+                                    <tbody id="transactions-list">
                                         
-                                        </tr>
                                     </tbody>
                             </table>
                             </div> 
@@ -103,7 +95,7 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="value-imput" class="form-label">Valor</label>
-                                <input type="number" class="form-control" id="value-imput"
+                                <input type="number" step="any" class="form-control" id="value-imput"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
